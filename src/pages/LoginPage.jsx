@@ -11,6 +11,11 @@ const LoginPage = () => {
 
     const navigate = useNavigate()
 
+    // check if user already login
+    if (localStorage.getItem("login-mhs")) {
+        navigate("/student-list/qr/")
+    }
+
     const handleSubmitLogin = (e) => {
         e.preventDefault()
         console.log("Login")

@@ -25,13 +25,13 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<Layout />} errorElement={<ErrorPage />} >
-        <Route path='/' element={<QRGeneratorPage />} />
+        <Route path='/' element={<LoginPage />} />
         <Route path='/not-login' element={<NotLoginPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
         {/* <Route path='/student-list' element={<StudentListPage />} /> */}
         <Route path='/student-list/add-student' element={<AddStudentPage />} />
-        <Route path="/student-list/qr/:id" element={<QRGeneratorPage />} />
+        <Route path="/student-list/qr/" element={<QRGeneratorPage />} />
         {/* <Route path='/attendance-room-list' element={<RoomListPage />} /> */}
         {/* <Route path='/attendance-room-list/:id' element={<ScanRoomPage />} /> */}
         {/* <Route path='/attendance-room-list/add-room' element={<AddRoomPage />} /> */}
