@@ -9,12 +9,12 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const NavbarFix = () => {
 
-  const isLoggedIn = JSON.parse(localStorage.getItem("login")); // // true or false
+  const isLoggedIn = JSON.parse(localStorage.getItem("login-mhs")); // // true or false
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("login");
+    localStorage.removeItem("login-mhs");
     window.location.reload();
   };
 
@@ -22,7 +22,7 @@ const NavbarFix = () => {
   if (isLoggedIn) {
     component = (
       <>
-        <Nav className="ms-auto my-1 gap-2 ">
+        <Nav className="ms-auto my-1 gap-2">
           <div className="text-center">
             <Dropdown>
               <Dropdown.Toggle id="dropdown-basic" className="btn btn-purple">{isLoggedIn.nama}</Dropdown.Toggle>
@@ -32,11 +32,9 @@ const NavbarFix = () => {
                   <img
                     height={120}
                     className="text-center mb-2 justify-center rounded"
-                    src={isLoggedIn.avatar} 
+                    src={isLoggedIn.avatar}
                   />
-
                   <h5 className="ms-auto text-center">{isLoggedIn.nama}</h5>
-
                   <Button
                     onClick={handleLogout}
                     // onClick={window.localStorage.clear()}
@@ -87,11 +85,11 @@ const NavbarFix = () => {
         <Navbar.Brand href="#">Absensi STIKOM</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto gap-2 text-center"  >
-            <NavLink to="/" className="nav-link">Home</NavLink>           
-            <NavLink to="/attendance-room-list" className="nav-link">Scan</NavLink>           
-            <NavLink to="/student-list" className="nav-link">Daftar Mahasiswa</NavLink>           
-          </Nav>
+          {/* <Nav className="ms-auto gap-2 text-center">
+            <NavLink to="/" className="nav-link">Home</NavLink>
+            <NavLink to="/attendance-room-list" className="nav-link">Scan</NavLink>
+            <NavLink to="/student-list" className="nav-link">Daftar Mahasiswa</NavLink>
+          </Nav> */}
           {component}
         </Navbar.Collapse>
       </Container>
